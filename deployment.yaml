@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: technest
+  name: technest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: technest
+  template:
+    metadata:
+      labels:
+        app: technest
+    spec:
+      containers:
+        - name: example-container
+          image: example-image
+          ports:
+            - containerPort: 8080
